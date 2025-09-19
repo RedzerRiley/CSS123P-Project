@@ -27,7 +27,7 @@ public class GameOverFrame extends JFrame {
 
     private void initializeComponents() {
         setTitle("Game Over - Typing Speed Game");
-        setSize(600, 500);
+        setSize(600, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         
@@ -44,7 +44,7 @@ public class GameOverFrame extends JFrame {
         titlePanel.setPreferredSize(new Dimension(600, 80));
         titlePanel.setBorder(BorderFactory.createEmptyBorder(15, 0, 15, 0));
         
-        JLabel titleLabel = new JLabel("🎮 GAME OVER", JLabel.CENTER);
+        JLabel titleLabel = new JLabel("GAME OVER", JLabel.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 32));
         titleLabel.setForeground(Color.WHITE);
         titlePanel.add(titleLabel);
@@ -59,7 +59,7 @@ public class GameOverFrame extends JFrame {
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 20));
         buttonPanel.setBackground(new Color(240, 248, 255));
         
-        JButton tryAgainButton = new JButton("🔄 PLAY AGAIN");
+        JButton tryAgainButton = new JButton("PLAY AGAIN");
         tryAgainButton.setPreferredSize(new Dimension(160, 50));
         tryAgainButton.setFont(new Font("Arial", Font.BOLD, 16));
         tryAgainButton.setForeground(Color.WHITE);
@@ -85,7 +85,7 @@ public class GameOverFrame extends JFrame {
             }
         });
         
-        JButton exitButton = new JButton("❌ EXIT");
+        JButton exitButton = new JButton("EXIT");
         exitButton.setPreferredSize(new Dimension(100, 50));
         exitButton.setFont(new Font("Arial", Font.BOLD, 16));
         exitButton.setForeground(Color.WHITE);
@@ -133,7 +133,7 @@ public class GameOverFrame extends JFrame {
         ));
 
         // Title
-        JLabel titleLabel = new JLabel("📊 YOUR PERFORMANCE");
+        JLabel titleLabel = new JLabel("YOUR PERFORMANCE");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 18));
         titleLabel.setForeground(new Color(63, 81, 181));
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -146,7 +146,7 @@ public class GameOverFrame extends JFrame {
         statsGrid.setBackground(Color.WHITE);
 
         // Player name
-        JLabel nameIconLabel = new JLabel("👤 Player:");
+        JLabel nameIconLabel = new JLabel("Player:");
         nameIconLabel.setFont(new Font("Arial", Font.BOLD, 14));
         nameIconLabel.setForeground(new Color(100, 100, 100));
         JLabel nameLabel = new JLabel(player.getName());
@@ -154,7 +154,7 @@ public class GameOverFrame extends JFrame {
         nameLabel.setForeground(new Color(63, 81, 181));
 
         // Score
-        JLabel scoreIconLabel = new JLabel("🏆 Final Score:");
+        JLabel scoreIconLabel = new JLabel("Final Score:");
         scoreIconLabel.setFont(new Font("Arial", Font.BOLD, 14));
         scoreIconLabel.setForeground(new Color(100, 100, 100));
         JLabel scoreLabel = new JLabel(String.valueOf(player.getScore()));
@@ -162,7 +162,7 @@ public class GameOverFrame extends JFrame {
         scoreLabel.setForeground(new Color(255, 193, 7));
 
         // Rounds completed
-        JLabel roundsIconLabel = new JLabel("🎯 Rounds:");
+        JLabel roundsIconLabel = new JLabel("Rounds:");
         roundsIconLabel.setFont(new Font("Arial", Font.BOLD, 14));
         roundsIconLabel.setForeground(new Color(100, 100, 100));
         JLabel roundsLabel = new JLabel(String.valueOf(player.getRound() - 1));
@@ -184,7 +184,7 @@ public class GameOverFrame extends JFrame {
         bottomStats.setBackground(Color.WHITE);
 
         // Difficulty
-        JLabel difficultyLabel = new JLabel("⚡ " + difficulty.name().toLowerCase());
+        JLabel difficultyLabel = new JLabel("" + difficulty.name().toLowerCase());
         difficultyLabel.setFont(new Font("Arial", Font.BOLD, 14));
         Color diffColor = difficulty == Difficulty.EASY ? new Color(76, 175, 80) :
                          difficulty == Difficulty.MEDIUM ? new Color(255, 152, 0) :
@@ -193,7 +193,7 @@ public class GameOverFrame extends JFrame {
 
         // Rank
         int rank = hsm.getPlayerRank(player.getName(), player.getScore());
-        JLabel rankLabel = new JLabel("🥇 Rank: #" + rank);
+        JLabel rankLabel = new JLabel("Rank: #" + rank);
         rankLabel.setFont(new Font("Arial", Font.BOLD, 14));
         
         // Color code the rank
@@ -214,7 +214,7 @@ public class GameOverFrame extends JFrame {
         // High score indicator with enhanced styling
         if (hsm.isNewHighScore(player.getName(), player.getScore())) {
             panel.add(Box.createVerticalStrut(15));
-            JLabel newHighScoreLabel = new JLabel("🎉 NEW HIGH SCORE! 🎉");
+            JLabel newHighScoreLabel = new JLabel("NEW HIGH SCORE!");
             newHighScoreLabel.setFont(new Font("Arial", Font.BOLD, 18));
             newHighScoreLabel.setForeground(new Color(244, 67, 54));
             newHighScoreLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -239,7 +239,7 @@ public class GameOverFrame extends JFrame {
         ));
 
         // Enhanced title
-        JLabel titleLabel = new JLabel("🏆 HALL OF FAME - TOP PLAYERS");
+        JLabel titleLabel = new JLabel("HALL OF FAME - TOP PLAYERS");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
         titleLabel.setForeground(new Color(76, 175, 80));
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
@@ -249,18 +249,17 @@ public class GameOverFrame extends JFrame {
         // Create table data
         List<Map.Entry<String, Integer>> topScores = hsm.getTopScores(10);
         
-        String[] columnNames = {"🥇 Rank", "👤 Player", "🏆 Score"};
+        String[] columnNames = {"Rank", "Player", "Score"};
         Object[][] data = new Object[Math.min(10, topScores.size())][3];
         
         for (int i = 0; i < Math.min(10, topScores.size()); i++) {
             Map.Entry<String, Integer> entry = topScores.get(i);
             
-            // Add medal emojis for top 3
             String rank = "#" + (i + 1);
-            if (i == 0) rank = "🥇 #1";
-            else if (i == 1) rank = "🥈 #2";
-            else if (i == 2) rank = "🥉 #3";
-            
+//            if (i == 0) rank = "#1";
+//            else if (i == 1) rank = "#2";
+//            else if (i == 2) rank = "#3";
+//
             data[i][0] = rank;
             data[i][1] = entry.getKey();
             data[i][2] = entry.getValue() + " pts";
@@ -319,7 +318,7 @@ public class GameOverFrame extends JFrame {
         panel.add(scrollPane, BorderLayout.CENTER);
 
         // Add a footer note
-        JLabel footerNote = new JLabel("💡 Your best score is automatically saved!");
+        JLabel footerNote = new JLabel("Your best score is automatically saved!");
         footerNote.setFont(new Font("Arial", Font.ITALIC, 12));
         footerNote.setForeground(new Color(150, 150, 150));
         footerNote.setHorizontalAlignment(JLabel.CENTER);

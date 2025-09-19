@@ -13,7 +13,7 @@ public class StartMenu extends JFrame {
 
     public StartMenu() {
         setTitle("Typing Speed Game");
-        setSize(500, 400);
+        setSize(500, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -68,7 +68,7 @@ public class StartMenu extends JFrame {
         difficultyGroup.add(hardButton);
 
         // Enhanced start button
-        startButton = new JButton("🚀 START GAME");
+        startButton = new JButton("START GAME");
         startButton.setPreferredSize(new Dimension(200, 50));
         startButton.setFont(new Font("Arial", Font.BOLD, 16));
         startButton.setForeground(Color.WHITE);
@@ -103,7 +103,7 @@ public class StartMenu extends JFrame {
         titlePanel.setPreferredSize(new Dimension(500, 100));
         titlePanel.setLayout(new BorderLayout());
 
-        JLabel titleLabel = new JLabel("⚡ TYPING SPEED CHALLENGE ⚡", JLabel.CENTER);
+        JLabel titleLabel = new JLabel("TYPING SPEED CHALLENGE", JLabel.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 28));
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setBorder(BorderFactory.createEmptyBorder(25, 0, 25, 0));
@@ -122,7 +122,7 @@ public class StartMenu extends JFrame {
         mainPanel.setBorder(BorderFactory.createEmptyBorder(30, 40, 30, 40));
 
         // Player name section
-        JPanel nameSection = createStyledSection("👤 Player Name", nameField);
+        JPanel nameSection = createStyledSection("Player Name", nameField);
 
         // Difficulty section
         JPanel difficultyPanel = new JPanel();
@@ -136,7 +136,7 @@ public class StartMenu extends JFrame {
         difficultyPanel.add(Box.createVerticalStrut(8));
         difficultyPanel.add(hardButton);
 
-        JPanel difficultySection = createStyledSection("🎯 Select Difficulty", difficultyPanel);
+        JPanel difficultySection = createStyledSection("Select Difficulty", difficultyPanel);
 
         // Button section
         JPanel buttonPanel = new JPanel();
@@ -157,7 +157,7 @@ public class StartMenu extends JFrame {
         JPanel footerPanel = new JPanel();
         footerPanel.setBackground(new Color(250, 250, 250));
         footerPanel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
-        JLabel footerLabel = new JLabel("💡 Tip: Each correct sentence gives you +10 points and +5 seconds!", JLabel.CENTER);
+        JLabel footerLabel = new JLabel("Each correct sentence gives you +10 points and +5 seconds!", JLabel.CENTER);
         footerLabel.setFont(new Font("Arial", Font.ITALIC, 12));
         footerLabel.setForeground(new Color(100, 100, 100));
         footerPanel.add(footerLabel);
