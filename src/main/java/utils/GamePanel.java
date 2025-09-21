@@ -91,7 +91,7 @@ public class GamePanel extends JFrame implements TimerManager.TimerCallback {
         highlightedSentencePane.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createTitledBorder(
                         BorderFactory.createLineBorder(new Color(100, 149, 237), 2),
-                        "📝 Sentence to type:",
+                        "Sentence to type:",
                         0,
                         0,
                         new Font("Arial", Font.BOLD, 14),
@@ -127,7 +127,7 @@ public class GamePanel extends JFrame implements TimerManager.TimerCallback {
                         e.consume(); // Block the key event
 
                         // Show feedback message
-                        feedbackLabel.setText("⚠️ Copy/Paste is not allowed! Type manually!");
+                        feedbackLabel.setText("Copy/Paste is not allowed! Type manually!");
                         feedbackLabel.setForeground(new Color(255, 152, 0));
 
                         // Clear the message after 2 seconds
@@ -234,9 +234,9 @@ public class GamePanel extends JFrame implements TimerManager.TimerCallback {
 
 //        JLabel instructionsLabel = new JLabel(
 //                "<html><center><b> HOW TO PLAY:</b><br>" +
-//                        "Press ENTER to submit •  Green = Correct • 🔴 Red = Incorrect • 🔵 Blue = Current Position<br>" +
+//                        "Press ENTER to submit •  Green = Correct •  Red = Incorrect •  Blue = Current Position<br>" +
 //                        "<i>Every correct answer: +10 points and +5 seconds • Speed increases every 5 rounds!</i><br>" +
-//                        "<b>⚠️ Note: Copy/Paste and text selection are disabled for fair play!</b></center></html>"
+//                        "<b> Note: Copy/Paste and text selection are disabled for fair play!</b></center></html>"
 //        );
 //        instructionsLabel.setFont(new Font("Arial", Font.PLAIN, 13));
 //        instructionsLabel.setForeground(new Color(100, 100, 100));
@@ -447,13 +447,13 @@ public class GamePanel extends JFrame implements TimerManager.TimerCallback {
         // Update lives label color and styling
         if (player.getLives() <= 1) {
             livesLabel.setForeground(Color.RED);
-            livesLabel.setText("❤️ Lives: " + player.getLives());
+            livesLabel.setText("Lives: " + player.getLives());
         } else if (player.getLives() <= 2) {
             livesLabel.setForeground(new Color(255, 152, 0));
-            livesLabel.setText("💛 Lives: " + player.getLives());
+            livesLabel.setText("Lives: " + player.getLives());
         } else {
             livesLabel.setForeground(new Color(60, 60, 60));
-            livesLabel.setText("💚 Lives: " + player.getLives());
+            livesLabel.setText("Lives: " + player.getLives());
         }
     }
 
@@ -463,13 +463,13 @@ public class GamePanel extends JFrame implements TimerManager.TimerCallback {
         // Color coding and emoji for timer
         if (time <= 5) {
             timerLabel.setForeground(Color.RED);
-            timerLabel.setText("🚨 Time: " + time);
+            timerLabel.setText("Time: " + time);
         } else if (time <= 10) {
             timerLabel.setForeground(new Color(255, 152, 0));
-            timerLabel.setText("⏰ Time: " + time);
+            timerLabel.setText("Time: " + time);
         } else {
             timerLabel.setForeground(new Color(60, 60, 60));
-            timerLabel.setText("⏲️ Time: " + time);
+            timerLabel.setText("Time: " + time);
         }
     }
 
